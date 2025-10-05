@@ -25,11 +25,12 @@ jobs:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
+  notification:
     - name: Send Slack notification
       if: always()
       uses: slackapi/slack-github-action@v1.27.0
       with:
-        channel-id: 'YOUR_CHANNEL_ID'
+        channel-id: 'C09JN1DMP8B'
         slack-message: |
           Playwright Tests - ${{ job.status }}
           Repository: ${{ github.repository }}
